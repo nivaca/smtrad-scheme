@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.tei-c.org/ns/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="TEI">
+      <attribute>
+        <name ns="http://www.w3.org/XML/1998/namespace">lang</name>
+        <data type="NCName"/>
+      </attribute>
+      <element name="teiHeader">
+        <element name="fileDesc">
+          <element name="titleStmt">
+            <element name="title">
+              <data type="NCName"/>
+            </element>
+            <element name="author">
+              <attribute>
+                <name ns="http://www.w3.org/XML/1998/namespace">id</name>
+                <data type="NCName"/>
+              </attribute>
+              <text/>
+            </element>
+          </element>
+          <element name="publicationStmt">
+            <element name="authority">
+              <text/>
+            </element>
+          </element>
+          <element name="sourceDesc">
+            <element name="p">
+              <text/>
+            </element>
+          </element>
+        </element>
+        <element name="revisionDesc">
+          <attribute name="status">
+            <data type="NCName"/>
+          </attribute>
+          <element name="change">
+            <attribute name="n">
+              <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="when">
+              <data type="date"/>
+            </attribute>
+            <attribute name="who"/>
+          </element>
+        </element>
+      </element>
+      <element name="text">
+        <element name="body">
+          <element name="schemaSpec">
+            <attribute name="ident">
+              <data type="NCName"/>
+            </attribute>
+            <attribute name="source">
+              <data type="anyURI"/>
+            </attribute>
+            <attribute name="start">
+              <data type="NCName"/>
+            </attribute>
+            <oneOrMore>
+              <choice>
+                <element name="constraintSpec">
+                  <attribute name="ident">
+                    <data type="NCName"/>
+                  </attribute>
+                  <attribute name="scheme">
+                    <data type="NCName"/>
+                  </attribute>
+                  <ref name="desc"/>
+                  <element name="constraint">
+                    <oneOrMore>
+                      <element>
+                        <name ns="http://purl.oclc.org/dsdl/schematron">rule</name>
+                        <attribute name="context"/>
+                        <element>
+                          <name ns="http://purl.oclc.org/dsdl/schematron">report</name>
+                          <attribute name="test"/>
+                          <text/>
+                        </element>
+                      </element>
+                    </oneOrMore>
+                  </element>
+                </element>
+                <element name="elementSpec">
+                  <attribute name="ident">
+                    <data type="NCName"/>
+                  </attribute>
+                  <attribute name="mode">
+                    <data type="NCName"/>
+                  </attribute>
+                  <attribute name="module">
+                    <data type="NCName"/>
+                  </attribute>
+                  <ref name="attList"/>
+                </element>
+                <element name="moduleRef">
+                  <attribute name="key">
+                    <data type="NCName"/>
+                  </attribute>
+                </element>
+              </choice>
+            </oneOrMore>
+            <element name="classSpec">
+              <attribute name="ident">
+                <data type="NCName"/>
+              </attribute>
+              <attribute name="mode">
+                <data type="NCName"/>
+              </attribute>
+              <attribute name="type">
+                <data type="NCName"/>
+              </attribute>
+              <ref name="attList"/>
+            </element>
+          </element>
+        </element>
+      </element>
+    </element>
+  </start>
+  <define name="attList">
+    <element name="attList">
+      <element name="attDef">
+        <attribute name="ident">
+          <data type="NCName"/>
+        </attribute>
+        <attribute name="mode">
+          <data type="NCName"/>
+        </attribute>
+        <attribute name="usage">
+          <data type="NCName"/>
+        </attribute>
+        <element name="valList">
+          <attribute name="mode">
+            <data type="NCName"/>
+          </attribute>
+          <attribute name="type">
+            <data type="NCName"/>
+          </attribute>
+          <oneOrMore>
+            <element name="valItem">
+              <attribute name="ident">
+                <data type="NCName"/>
+              </attribute>
+              <element name="gloss">
+                <text/>
+              </element>
+              <ref name="desc"/>
+            </element>
+          </oneOrMore>
+        </element>
+      </element>
+    </element>
+  </define>
+  <define name="desc">
+    <element name="desc">
+      <text/>
+    </element>
+  </define>
+</grammar>
