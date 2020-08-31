@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+  schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" >
   <teiHeader>
     <fileDesc>
@@ -27,32 +27,77 @@
         
         <!-- Core Module -->
         <moduleRef key="core"/>
-
+        
         <!-- Begin modifications to del element -->
         
+        <!--
+          #####################
+          ref @type
+          #####################
+          a:        \citeauthor
+          p:        \parencite
+          t:        \citetitle
+          y:        \citeyear
+          py:       \citeyear in parenthesis
+          abbr:     \citeabbr
+          pabbr:    \citeabbr in parenthesis
+          abbrpc:    \citeabbr (content)
+          fulltext: use text/rend without calling LaTeX's cite
+          nc:       \nocite
+          pnc:      \nocite in parenthesis
+          url:      href
+        -->
         <elementSpec ident="ref" module="core" mode="change">
           <attList>
-            <attDef ident="rend" usage="rec" mode="change">
+            <attDef ident="type" usage="rec" mode="change">
               <valList type="semi" mode="add">
-                <valItem ident="strikethrough">
-                  <gloss>strikethrough</gloss>
-                  <desc>A deletion indicated by a line through the center of the text</desc>
+                <valItem ident="a">
+                  <gloss>citeauthor</gloss>
+                  <desc>Only cites the author.</desc>
                 </valItem>
-                <valItem ident="expunctuation">
-                  <gloss>expunctuation</gloss>
-                  <desc>A deletion indicated by dots underneath the text</desc>
+                <valItem ident="p">
+                  <gloss>parencite</gloss>
+                  <desc>Includes the whole citation inside parentheses.</desc>
                 </valItem>
-                <valItem ident="blackout">
-                  <gloss>black out</gloss>
-                  <desc>A deletion indicated by blacking out the word or segment</desc>
+                <valItem ident="t">
+                  <gloss>citetitle</gloss>
+                  <desc>Only cites the title.</desc>
                 </valItem>
-                <valItem ident="underline">
-                  <gloss>underline</gloss>
-                  <desc>A deletion indicated by underling the word or segment</desc>
+                <valItem ident="y">
+                  <gloss>citeyear</gloss>
+                  <desc>Only cites the year.</desc>
                 </valItem>
-                <valItem ident="erasure">
-                  <gloss>erasure</gloss>
-                  <desc>Deletion by erasure</desc>
+                <valItem ident="py">
+                  <gloss>citeyear in parentheses</gloss>
+                  <desc>Only cites the year inside parentheses.</desc>
+                </valItem>
+                <valItem ident="abbr">
+                  <gloss>citeabbr</gloss>
+                  <desc>Only cites the abbreviation of the cited work.</desc>
+                </valItem>
+                <valItem ident="pabbr">
+                  <gloss>citeabbr in parenthesis</gloss>
+                  <desc>Only cites the abbreviation of the cited work, inside parentheses.</desc>
+                </valItem>
+                <valItem ident="abbrpc">
+                  <gloss>citeabbr in parenthesis with content</gloss>
+                  <desc>Cites the abbreviation of the cited work, inside parentheses, includes content.</desc>
+                </valItem>
+                <valItem ident="fulltext">
+                  <gloss>fulltext</gloss>
+                  <desc>Whatever is in the ref content gets printed.</desc>
+                </valItem>
+                <valItem ident="nc">
+                  <gloss>nocite</gloss>
+                  <desc>Produces a nocite citation.</desc>
+                </valItem>
+                <valItem ident="pnc">
+                  <gloss>nocite in parentheses</gloss>
+                  <desc>Produces a nocite citation inside parenthesis.</desc>
+                </valItem>
+                <valItem ident="url">
+                  <gloss>url citation</gloss>
+                  <desc>Cites a url.</desc>
                 </valItem>
               </valList>
             </attDef>
@@ -60,29 +105,22 @@
         </elementSpec>
         
         <!-- end del element -->
-
-       
         
-        <!-- RULES FOR MILESTON ELEMENTS -->
+        
+        
+        <!-- RULES FOR MILESTONE ELEMENTS -->
         <constraintSpec ident="milestones-must-have-ed-attr" scheme="schematron">
           <desc>Milestones must have xml:id attribute</desc>
           <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:lb|tei:cb|tei:pb">
+            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:lb">
               <report test="not(./@xml:id)">Milestones must have xml:id attribute</report>
             </rule>
           </constraint>
         </constraintSpec>
-        <constraintSpec ident="cb-and-pb-must-have-n-attr" scheme="schematron">
-          <desc>cb and pb must have n attribute</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:cb|tei:pb">
-              <report test="not(./@n)">cb and pb must have n attribute</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
-
+        
+        
         <moduleRef key="tei"/>
-
+        
         <!-- header module -->
         <moduleRef key="header"/>
         <!-- header rules -->
@@ -249,29 +287,29 @@
             </rule>
           </constraint>
         </constraintSpec>
-
+        
         <!-- optional modules -->
-
+        
         <!-- linking module -->
         <moduleRef key="linking"/>
-
+        
         <!-- Name and Date Module -->
         <moduleRef key="namesdates"/>
-
+        
         <!-- Text Criticism Module -->
         <moduleRef key="textcrit"/>
-
+        
         <!-- Primary Source Transcription Module -->
         <moduleRef key="transcr"/>
-
+        
         <!-- Ms Description Module -->
         <!-- not sure what elements need here; but I will probably need a lot more elements for the official bibliography of the mansucriopt witnesses -->
         <moduleRef key="msdescription"/>
-
+        
         <!-- Character and Glyph Documentat Module -->
         <!-- may not be necessary once <pc> element replaces glyps -->
         <moduleRef key="gaiji"/>
-
+        
         <!-- analysis module -->
         <moduleRef key="analysis"/>
         
@@ -307,10 +345,10 @@
             </attDef>
           </attList>
         </elementSpec>
-                
+        
         
         <!-- attribute class modifications -->
-
+        
         <classSpec ident="att.placement" type="atts" mode="change">
           <attList>
             <attDef ident="place" mode="change" usage="rec">

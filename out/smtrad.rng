@@ -118,6 +118,11 @@
       </element>
     </element>
   </start>
+  <define name="desc">
+    <element name="desc">
+      <text/>
+    </element>
+  </define>
   <define name="attList">
     <element name="attList">
       <element name="attDef">
@@ -150,11 +155,6 @@
           </oneOrMore>
         </element>
       </element>
-    </element>
-  </define>
-  <define name="desc">
-    <element name="desc">
-      <text/>
     </element>
   </define>
 </grammar>
