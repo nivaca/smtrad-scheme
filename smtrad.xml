@@ -99,6 +99,10 @@
                   <gloss>url citation</gloss>
                   <desc>Cites a url.</desc>
                 </valItem>
+                <valItem ident="internal">
+                  <gloss>Internal</gloss>
+                  <desc>Internal citation</desc>
+                </valItem>
               </valList>
             </attDef>
           </attList>
