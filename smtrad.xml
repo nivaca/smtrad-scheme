@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
-  schematypens="http://purl.oclc.org/dsdl/schematron"?>
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" >
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>SMTrad </title>
+        <title>LombardPress Customization File</title>
+        <author xml:id="JeffreyWitt">Jeffrey C. Witt</author>
+        <author xml:id="MichaelChristensen">Michael Stenskjær Christensen</author>
         <author xml:id="NicolasVaughan">Nicolas Vaughan</author>
       </titleStmt>
       <publicationStmt>
@@ -17,91 +19,42 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc status="draft">
-      <change who="#NicolasVaughan" when="2020-08-31" n="0.0.0-dev"></change>
+      <change who="#JeffreyWitt" when="2012-05-08" n="0.0.0-dev"></change>
     </revisionDesc>
   </teiHeader>
   <text>
     <body>
       <schemaSpec ident="lombardpress-schema" start="TEI"
-        source="https://tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">
+          source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml">
         
         <!-- Core Module -->
         <moduleRef key="core"/>
-        
+
         <!-- Begin modifications to del element -->
         
-        <!--
-          #####################
-          ref @type
-          #####################
-          a:        \citeauthor
-          p:        \parencite
-          t:        \citetitle
-          y:        \citeyear
-          py:       \citeyear in parenthesis
-          abbr:     \citeabbr
-          pabbr:    \citeabbr in parenthesis
-          abbrpc:    \citeabbr (content)
-          fulltext: use text/rend without calling LaTeX's cite
-          nc:       \nocite
-          pnc:      \nocite in parenthesis
-          url:      href
-        -->
-        <elementSpec ident="ref" module="core" mode="change">
+        <elementSpec ident="del" module="core" mode="change">
           <attList>
-            <attDef ident="type" usage="rec" mode="change">
+            <attDef ident="rend" usage="rec" mode="change">
               <valList type="semi" mode="add">
-                <valItem ident="a">
-                  <gloss>citeauthor</gloss>
-                  <desc>Only cites the author.</desc>
+                <valItem ident="strikethrough">
+                  <gloss>strikethrough</gloss>
+                  <desc>A deletion indicated by a line through the center of the text</desc>
                 </valItem>
-                <valItem ident="p">
-                  <gloss>parencite</gloss>
-                  <desc>Includes the whole citation inside parentheses.</desc>
+                <valItem ident="expunctuation">
+                  <gloss>expunctuation</gloss>
+                  <desc>A deletion indicated by dots underneath the text</desc>
                 </valItem>
-                <valItem ident="t">
-                  <gloss>citetitle</gloss>
-                  <desc>Only cites the title.</desc>
+                <valItem ident="blackout">
+                  <gloss>black out</gloss>
+                  <desc>A deletion indicated by blacking out the word or segment</desc>
                 </valItem>
-                <valItem ident="y">
-                  <gloss>citeyear</gloss>
-                  <desc>Only cites the year.</desc>
+                <valItem ident="underline">
+                  <gloss>underline</gloss>
+                  <desc>A deletion indicated by underling the word or segment</desc>
                 </valItem>
-                <valItem ident="py">
-                  <gloss>citeyear in parentheses</gloss>
-                  <desc>Only cites the year inside parentheses.</desc>
-                </valItem>
-                <valItem ident="abbr">
-                  <gloss>citeabbr</gloss>
-                  <desc>Only cites the abbreviation of the cited work.</desc>
-                </valItem>
-                <valItem ident="pabbr">
-                  <gloss>citeabbr in parenthesis</gloss>
-                  <desc>Only cites the abbreviation of the cited work, inside parentheses.</desc>
-                </valItem>
-                <valItem ident="abbrpc">
-                  <gloss>citeabbr in parenthesis with content</gloss>
-                  <desc>Cites the abbreviation of the cited work, inside parentheses, includes content.</desc>
-                </valItem>
-                <valItem ident="fulltext">
-                  <gloss>fulltext</gloss>
-                  <desc>Whatever is in the ref content gets printed.</desc>
-                </valItem>
-                <valItem ident="nc">
-                  <gloss>nocite</gloss>
-                  <desc>Produces a nocite citation.</desc>
-                </valItem>
-                <valItem ident="pnc">
-                  <gloss>nocite in parentheses</gloss>
-                  <desc>Produces a nocite citation inside parenthesis.</desc>
-                </valItem>
-                <valItem ident="url">
-                  <gloss>url citation</gloss>
-                  <desc>Cites a url.</desc>
-                </valItem>
-                <valItem ident="internal">
-                  <gloss>Internal</gloss>
-                  <desc>Internal citation</desc>
+                <valItem ident="erasure">
+                  <gloss>erasure</gloss>
+                  <desc>Deletion by erasure</desc>
                 </valItem>
               </valList>
             </attDef>
@@ -109,22 +62,93 @@
         </elementSpec>
         
         <!-- end del element -->
+
+        <!-- begin add element -->
         
+        <elementSpec ident="add" module="core" mode="change">
+          <attList>
+            <attDef ident="place" usage="rec" mode="change">
+              <valList type="semi" mode="add">
+                <valItem ident="margin">
+                  <gloss>margin</gloss>
+                  <desc>A generic place locator for an addition appearing in some margin</desc>
+                </valItem>
+                <valItem ident="margin-right">
+                  <gloss>margin-right</gloss>
+                  <desc>Indicates an addition in the margin to the right of the text in question</desc>
+                </valItem>
+                <valItem ident="margin-left">
+                  <gloss>margin-left</gloss>
+                  <desc>Indicates an addition in the margin to the left of the text in question</desc>
+                </valItem>
+                <valItem ident="margin-above">
+                  <gloss>margin-above</gloss>
+                  <desc>Indicates an addition in the margin to the above of the text in question</desc>
+                </valItem>
+                <valItem ident="margin-below">
+                  <gloss>margin-below</gloss>
+                  <desc>Indicates an addition in the margin to the below of the text in question</desc>
+                </valItem>
+                <valItem ident="above-line">
+                  <gloss>above-line</gloss>
+                  <desc>Indicates an addition inserted above the line in question</desc>
+                </valItem>
+                <valItem ident="below-line">
+                  <gloss>below-line</gloss>
+                  <desc>Indicates an addition inserted below the line in question</desc>
+                </valItem>
+                <valItem ident="in-line">
+                  <gloss>in-line</gloss>
+                  <desc>Indicates an addition inserted in the line</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
         
+        <!-- end add element -->
+
+        <elementSpec ident="note" module="core" mode="change">
+          <attList>
+            <attDef ident="type" mode="change" usage="rec">
+              <constraintSpec ident="note-place-noplace" scheme="schematron">
+                <desc>These constraints are used to require a place attribute when a when marginal attribute is used and to forbid a place attribute when an editorial note is used. The reasoning is that an editorial note is an intervention and a new creation, therefore there is no pre-existing place or location that it can be found. A marginal note is just the opposite, it has a physical place is a primary source witness, therefore that place needs to be recorded with a place attribute.</desc>
+                 <constraint>
+                  <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="tei:note[@type='marginal-note']">
+                    <report test="not(./@place)">This is a marginal note. This means that it is a note that exist in the primary source. Therefore it has a physical location that needs to be recorded.</report>
+                  </rule>
+                </constraint>
+              </constraintSpec>
+              <valList type="semi" mode="change">
+                <valItem ident="marginal-note">
+                  <gloss>Marginal Note</gloss>
+                  <desc>A note present in the manuscript witness itself, but clear meant as annotation to the actual text. This note may either be in the same hand as the text or supplied by a latter reader.</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
         
-        <!-- RULES FOR MILESTONE ELEMENTS -->
+        <!-- RULES FOR MILESTON ELEMENTS -->
         <constraintSpec ident="milestones-must-have-ed-attr" scheme="schematron">
-          <desc>Milestones must have xml:id attribute</desc>
+          <desc>Milestones must have ed attribute</desc>
           <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:lb">
-              <report test="not(./@xml:id)">Milestones must have xml:id attribute</report>
+            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:lb|tei:cb|tei:pb">
+              <report test="not(./@ed)">Milestones must have ed attribute</report>
             </rule>
           </constraint>
         </constraintSpec>
-        
-        
+        <constraintSpec ident="cb-and-pb-must-have-n-attr" scheme="schematron">
+          <desc>cb and pb must have n attribute</desc>
+          <constraint>
+            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:cb|tei:pb">
+              <report test="not(./@n)">cb and pb must have n attribute</report>
+            </rule>
+          </constraint>
+        </constraintSpec>
+
         <moduleRef key="tei"/>
-        
+
         <!-- header module -->
         <moduleRef key="header"/>
         <!-- header rules -->
@@ -291,29 +315,29 @@
             </rule>
           </constraint>
         </constraintSpec>
-        
+
         <!-- optional modules -->
-        
+
         <!-- linking module -->
         <moduleRef key="linking"/>
-        
+
         <!-- Name and Date Module -->
         <moduleRef key="namesdates"/>
-        
+
         <!-- Text Criticism Module -->
         <moduleRef key="textcrit"/>
-        
+
         <!-- Primary Source Transcription Module -->
         <moduleRef key="transcr"/>
-        
+
         <!-- Ms Description Module -->
         <!-- not sure what elements need here; but I will probably need a lot more elements for the official bibliography of the mansucriopt witnesses -->
         <moduleRef key="msdescription"/>
-        
+
         <!-- Character and Glyph Documentat Module -->
         <!-- may not be necessary once <pc> element replaces glyps -->
         <moduleRef key="gaiji"/>
-        
+
         <!-- analysis module -->
         <moduleRef key="analysis"/>
         
@@ -349,10 +373,10 @@
             </attDef>
           </attList>
         </elementSpec>
-        
+                
         
         <!-- attribute class modifications -->
-        
+
         <classSpec ident="att.placement" type="atts" mode="change">
           <attList>
             <attDef ident="place" mode="change" usage="rec">
