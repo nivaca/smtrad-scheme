@@ -392,14 +392,14 @@
           Thus Ps are not allowed in notes or cites or quotes. P is a privileged structure, 
           the "ab" element should be used everywhere else there is not for creating structure block units -->
         
-        <constraintSpec ident="body-p-is-child-of-div" scheme="schematron">
+        <!--<constraintSpec ident="body-p-is-child-of-div" scheme="schematron">
           <desc>every body p must be an immediate child of a div</desc>
           <constraint>
             <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]/tei:body[1]//tei:p">
               <report test="not(./parent::tei:div[1])">every body p must be an immediate child of a div</report>
             </rule>
           </constraint>
-        </constraintSpec>
+        </constraintSpec>-->
         
         <!-- optional modules -->
         

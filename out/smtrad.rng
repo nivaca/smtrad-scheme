@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-09-04T02:13:07Z. .
+Schema generated from ODD source 2020-09-04T02:16:54Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -14825,13 +14825,6 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:text[1]/tei:body[1]">
          <report test="count(./*) gt 1">Body must have ONLY child that is a div</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-body-p-is-child-of-div-constraint-rule-24">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:text[1]/tei:body[1]//tei:p">
-         <report test="not(./parent::tei:div[1])">every body p must be an immediate child of a div</report>
       </rule>
    </pattern>
 </grammar>
