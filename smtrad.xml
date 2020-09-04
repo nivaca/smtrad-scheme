@@ -247,23 +247,7 @@
         <!-- text structure module -->
         <moduleRef key="textstructure"/>
         
-        <!-- rules for front -->
-        <constraintSpec ident="front-element-must-be-present" scheme="schematron">
-          <desc>Front element must be present</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]">
-              <report test="not(./tei:front)">Front element must be present</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
-        <constraintSpec ident="front-element-starts-on-div" scheme="schematron">
-          <desc>Front element must contain a div with a starts-on xml:id</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]/tei:front[1]">
-              <report test="not(./tei:div[@xml:id='starts-on'])">Front element must contain a div with a "starts-on" xml:id, i.e. @xml:id='starts-on'</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
+        
         <!-- rules for body -->
         <constraintSpec ident="body-must-have-immediate-div-and-no-other-direct-children" scheme="schematron">
           <desc>Body must have immediate div and no other direct children</desc>
