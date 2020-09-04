@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-09-04T00:33:40Z. .
+Schema generated from ODD source 2020-09-04T00:41:31Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -14448,97 +14448,63 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       </choice>
    </start>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-milestones-must-have-ed-attr-constraint-rule-15">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="//tei:lb|tei:cb|tei:pb">
-         <report test="not(./@ed)">Milestones must have ed attribute</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-cb-and-pb-must-have-n-attr-constraint-rule-16">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0" context="//tei:cb|tei:pb">
-         <report test="not(./@n)">cb and pb must have n attribute</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-missing-author-rule-constraint-rule-17">
+            id="SMTrad-missing-author-rule-constraint-rule-15">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]">
          <report test="not(./tei:author)">An author must be stated. Either the author's name or anonymous should be stated</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-missing-edition-n-constraint-rule-18">
+            id="SMTrad-missing-edition-n-constraint-rule-16">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:editionStmt[1]/tei:edition[1]">
          <report test="not(./@n)">Edition element must indicate edition number with n attribute of the form x.x.x or x.x.x-dev</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-missing-edition-date-constraint-rule-19">
+            id="SMTrad-missing-edition-date-constraint-rule-17">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:editionStmt[1]/tei:edition[1]">
          <report test="not(./tei:date)">EditionStmt Edition must have an date element as child</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-missing-edition-date-when-attribute-constraint-rule-20">
+            id="SMTrad-missing-edition-date-when-attribute-constraint-rule-18">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:editionStmt[1]/tei:edition[1]">
          <report test="not(./tei:date/@when)">EditionStmt Edition Date must have a when attribute</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-pubstmt-must-have-authority-constraint-rule-21">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:publicationStmt[1][not(./tei:p)]">
-         <report test="not(./tei:authority)">publicationStmt must have an authority as child if p is not used</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-pubstmt-must-have-availability-constraint-rule-22">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:publicationStmt[1][not(./tei:p)]">
-         <report test="not(./tei:availability)">publicationStmt must have an availability element as child if p is not used</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-schema-ref-must-be-present-constraint-rule-23">
+            id="SMTrad-schema-ref-must-be-present-constraint-rule-19">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:encodingDesc[1]">
          <report test="not(./tei:schemaRef)">SchemaRef must be present</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-schema-ref-must-have-n-attribute-constraint-rule-24">
+            id="SMTrad-schema-ref-must-have-n-attribute-constraint-rule-20">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:encodingDesc[1]/tei:schemaRef[1]">
          <report test="not(./@n)">SchemaRef must have an n attribute indicating the schema version followed, e.g. "lbp-diplomatic-1.0.0" </report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-revision-desc-must-be-present-constraint-rule-25">
+            id="SMTrad-revision-desc-must-be-present-constraint-rule-21">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]">
          <report test="not(./tei:revisionDesc)">Revision description must be present</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-revision-desc-must-have-status-constraint-rule-26">
+            id="SMTrad-revision-desc-must-have-status-constraint-rule-22">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]/tei:revisionDesc[1]">
          <report test="not(./@status)">Revision description must have a status</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-front-element-must-be-present-constraint-rule-27">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:text[1]">
-         <report test="not(./tei:front)">Front element must be present</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-body-must-have-immediate-div-and-no-other-direct-children-constraint-rule-28">
+            id="SMTrad-body-must-have-immediate-div-and-no-other-direct-children-constraint-rule-23">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:text[1]/tei:body[1]">
          <report test="not(./tei:div[1])">Body must have immediate div</report>
@@ -14549,7 +14515,7 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-body-p-is-child-of-div-constraint-rule-30">
+            id="SMTrad-body-p-is-child-of-div-constraint-rule-25">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:text[1]/tei:body[1]//tei:p">
          <report test="not(./parent::tei:div[1])">every body p must be an immediate child of a div</report>

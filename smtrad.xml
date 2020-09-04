@@ -129,23 +129,6 @@
           </attList>
         </elementSpec>
         
-        <!-- RULES FOR MILESTON ELEMENTS -->
-        <constraintSpec ident="milestones-must-have-ed-attr" scheme="schematron">
-          <desc>Milestones must have ed attribute</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:lb|tei:cb|tei:pb">
-              <report test="not(./@ed)">Milestones must have ed attribute</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
-        <constraintSpec ident="cb-and-pb-must-have-n-attr" scheme="schematron">
-          <desc>cb and pb must have n attribute</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="//tei:cb|tei:pb">
-              <report test="not(./@n)">cb and pb must have n attribute</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
         
         <moduleRef key="tei"/>
         
@@ -161,6 +144,7 @@
             </rule>
           </constraint>
         </constraintSpec>
+        
         <!-- editionStmt rules -->
         <constraintSpec ident="missing-edition-n" scheme="schematron">
           <desc>EditionStmt edition must have an n attribute</desc>
@@ -186,23 +170,9 @@
             </rule>
           </constraint>
         </constraintSpec>
-        <!-- pub stmt rules -->
-        <constraintSpec ident="pubstmt-must-have-authority" scheme="schematron">
-          <desc>publicationStmt must have an authority if p is not used</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:publicationStmt[1][not(./tei:p)]">
-              <report test="not(./tei:authority)">publicationStmt must have an authority as child if p is not used</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
-        <constraintSpec ident="pubstmt-must-have-availability" scheme="schematron">
-          <desc>publicationStmt must have an availability element as child if p is not used</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:publicationStmt[1][not(./tei:p)]">
-              <report test="not(./tei:availability)">publicationStmt must have an availability element as child if p is not used</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
+        
+        
+        
         
         
         <!-- encodingDesc rules -->
@@ -250,15 +220,7 @@
         <!-- text structure module -->
         <moduleRef key="textstructure"/>
         
-        <!-- rules for front -->
-        <constraintSpec ident="front-element-must-be-present" scheme="schematron">
-          <desc>Front element must be present</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]">
-              <report test="not(./tei:front)">Front element must be present</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
+        
         
         
         <!-- rules for body -->
