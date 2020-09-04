@@ -244,8 +244,21 @@
         
         <!-- END HEADER RULES -->
         
+        
+        
+        
         <!-- text structure module -->
         <moduleRef key="textstructure"/>
+        
+        <!-- rules for front -->
+        <constraintSpec ident="front-element-must-be-present" scheme="schematron">
+          <desc>Front element must be present</desc>
+          <constraint>
+            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]">
+              <report test="not(./tei:front)">Front element must be present</report>
+            </rule>
+          </constraint>
+        </constraintSpec>
         
         
         <!-- rules for body -->
