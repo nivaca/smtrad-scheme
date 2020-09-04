@@ -30,6 +30,23 @@
         <!-- Core Module -->
         <moduleRef key="core"/>
         
+        
+        
+        <elementSpec ident="p" module="core" mode="add">
+          <attList>
+            <attDef ident="rend" usage="opt" mode="add">
+              <valList type="closed" mode="add">
+                <valItem ident="indented">
+                  <gloss>indented</gloss>
+                  <desc>Indented paragraph</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        
+        
         <!-- Begin modifications to del element -->
         
         <elementSpec ident="del" module="core" mode="change">
