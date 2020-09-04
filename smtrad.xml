@@ -323,23 +323,7 @@
         
         
         
-        <!-- encodingDesc rules -->
-        <constraintSpec ident="schema-ref-must-be-present" scheme="schematron">
-          <desc>SchemaRef must be present</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:encodingDesc[1]">
-              <report test="not(./tei:schemaRef)">SchemaRef must be present</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
-        <constraintSpec ident="schema-ref-must-have-n-attribute" scheme="schematron">
-          <desc>SchemaRef must have an n attribute indicating schema version followed</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:encodingDesc[1]/tei:schemaRef[1]">
-              <report test="not(./@n)">SchemaRef must have an n attribute indicating the schema version followed, e.g. "lbp-diplomatic-1.0.0" </report>
-            </rule>
-          </constraint>
-        </constraintSpec>
+        
         <!-- revisionDesc rules -->
         <constraintSpec ident="revision-desc-must-be-present" scheme="schematron">
           <desc>Revision description must be present</desc>
@@ -349,20 +333,12 @@
             </rule>
           </constraint>
         </constraintSpec>
-        <!-- TODO: I can't get this test to work -->
-        <constraintSpec ident="revision-desc-must-have-status" scheme="schematron">
-          <desc>Revision description must have a status</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:revisionDesc[1]">
-              <report test="not(./@status)">Revision description must have a status</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
-        <!-- TODO: there are more MUST's here, but enforcement is not urgent -->
         
         <!-- END HEADER RULES -->
         
-        
+      
+      
+      
         
         
         <!-- text structure module -->
@@ -386,6 +362,9 @@
         <!-- rules for head -->
         <!-- head rules are covered by general tei rules -->
         
+        
+        
+        
         <!-- rules for p -->
         
         <!-- note that this rule disallows the use of p as children of any other rules. 
@@ -400,6 +379,9 @@
             </rule>
           </constraint>
         </constraintSpec>-->
+        
+        
+        
         
         <!-- optional modules -->
         

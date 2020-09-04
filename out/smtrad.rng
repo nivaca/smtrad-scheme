@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-09-04T02:16:54Z. .
+Schema generated from ODD source 2020-09-04T02:26:00Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -14789,35 +14789,14 @@ The attributes @to and @from on <name/> may each contain only a single value</re
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-schema-ref-must-be-present-constraint-rule-18">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:teiHeader[1]/tei:encodingDesc[1]">
-         <report test="not(./tei:schemaRef)">SchemaRef must be present</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-schema-ref-must-have-n-attribute-constraint-rule-19">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:teiHeader[1]/tei:encodingDesc[1]/tei:schemaRef[1]">
-         <report test="not(./@n)">SchemaRef must have an n attribute indicating the schema version followed, e.g. "lbp-diplomatic-1.0.0" </report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-revision-desc-must-be-present-constraint-rule-20">
+            id="SMTrad-revision-desc-must-be-present-constraint-rule-18">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:teiHeader[1]">
          <report test="not(./tei:revisionDesc)">Revision description must be present</report>
       </rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-revision-desc-must-have-status-constraint-rule-21">
-      <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
-            context="/tei:TEI/tei:teiHeader[1]/tei:revisionDesc[1]">
-         <report test="not(./@status)">Revision description must have a status</report>
-      </rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="SMTrad-body-must-have-immediate-div-and-no-other-direct-children-constraint-rule-22">
+            id="SMTrad-body-must-have-immediate-div-and-no-other-direct-children-constraint-rule-19">
       <rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
             context="/tei:TEI/tei:text[1]/tei:body[1]">
          <report test="not(./tei:div[1])">Body must have immediate div</report>
