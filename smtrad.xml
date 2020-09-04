@@ -99,6 +99,10 @@
                   <gloss>smallcaps</gloss>
                   <desc>Render in smallcaps</desc>
                 </valItem>
+                <valItem ident="upshape">
+                  <gloss>upshape</gloss>
+                  <desc>Render in upshape, i.e. without italics</desc>
+                </valItem>
                 <valItem ident="bf">
                   <gloss>boldface</gloss>
                   <desc>Render in bold text</desc>
