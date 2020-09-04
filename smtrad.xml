@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+  schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" >
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>LombardPress Customization File</title>
-        <author xml:id="JeffreyWitt">Jeffrey C. Witt</author>
-        <author xml:id="MichaelChristensen">Michael Stenskjær Christensen</author>
-        <author xml:id="NicolasVaughan">Nicolas Vaughan</author>
+        <title>SMTrad Customization File</title>
+        <author ref="#nivaca">Nicolas Vaughan</author>
       </titleStmt>
       <publicationStmt>
         <authority>An SCTA and LombardPress Collaboration Project</authority>
@@ -19,17 +17,19 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc status="draft">
-      <change who="#JeffreyWitt" when="2012-05-08" n="0.0.0-dev"></change>
+      <change who="#nivaca" when="2020-09-03" n="0.0.0-dev"></change>
     </revisionDesc>
   </teiHeader>
   <text>
     <body>
-      <schemaSpec ident="lombardpress-schema" start="TEI"
-          source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml">
+      <!--<schemaSpec ident="lombardpress-schema" start="TEI"
+        source="http://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">-->
+      <schemaSpec ident="SMTrad"
+        source="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">
         
         <!-- Core Module -->
         <moduleRef key="core"/>
-
+        
         <!-- Begin modifications to del element -->
         
         <elementSpec ident="del" module="core" mode="change">
@@ -62,7 +62,7 @@
         </elementSpec>
         
         <!-- end del element -->
-
+        
         <!-- begin add element -->
         
         <elementSpec ident="add" module="core" mode="change">
@@ -107,13 +107,13 @@
         </elementSpec>
         
         <!-- end add element -->
-
+        
         <elementSpec ident="note" module="core" mode="change">
           <attList>
             <attDef ident="type" mode="change" usage="rec">
               <constraintSpec ident="note-place-noplace" scheme="schematron">
                 <desc>These constraints are used to require a place attribute when a when marginal attribute is used and to forbid a place attribute when an editorial note is used. The reasoning is that an editorial note is an intervention and a new creation, therefore there is no pre-existing place or location that it can be found. A marginal note is just the opposite, it has a physical place is a primary source witness, therefore that place needs to be recorded with a place attribute.</desc>
-                 <constraint>
+                <constraint>
                   <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="tei:note[@type='marginal-note']">
                     <report test="not(./@place)">This is a marginal note. This means that it is a note that exist in the primary source. Therefore it has a physical location that needs to be recorded.</report>
                   </rule>
@@ -146,9 +146,9 @@
             </rule>
           </constraint>
         </constraintSpec>
-
+        
         <moduleRef key="tei"/>
-
+        
         <!-- header module -->
         <moduleRef key="header"/>
         <!-- header rules -->
@@ -315,29 +315,29 @@
             </rule>
           </constraint>
         </constraintSpec>
-
+        
         <!-- optional modules -->
-
+        
         <!-- linking module -->
         <moduleRef key="linking"/>
-
+        
         <!-- Name and Date Module -->
         <moduleRef key="namesdates"/>
-
+        
         <!-- Text Criticism Module -->
         <moduleRef key="textcrit"/>
-
+        
         <!-- Primary Source Transcription Module -->
         <moduleRef key="transcr"/>
-
+        
         <!-- Ms Description Module -->
         <!-- not sure what elements need here; but I will probably need a lot more elements for the official bibliography of the mansucriopt witnesses -->
         <moduleRef key="msdescription"/>
-
+        
         <!-- Character and Glyph Documentat Module -->
         <!-- may not be necessary once <pc> element replaces glyps -->
         <moduleRef key="gaiji"/>
-
+        
         <!-- analysis module -->
         <moduleRef key="analysis"/>
         
@@ -373,10 +373,10 @@
             </attDef>
           </attList>
         </elementSpec>
-                
+        
         
         <!-- attribute class modifications -->
-
+        
         <classSpec ident="att.placement" type="atts" mode="change">
           <attList>
             <attDef ident="place" mode="change" usage="rec">
