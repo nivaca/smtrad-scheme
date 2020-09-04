@@ -204,30 +204,8 @@
           </constraint>
         </constraintSpec>
         
-        <!-- sourceDesc rules -->
-        <constraintSpec ident="src-desc-must-contain-listwit-or-listbibl-but-not-both" scheme="schematron">
-          <desc>Source description must contain a listWit or listBibl, but not both</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]">
-              <report test="not(./tei:listWit) and not(./tei:listBibl)">Source description must contain a listWit or listBibl, but not both</report>
-            </rule>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:listWit[1]">
-              <report test="./tei:listBibl">Source description must contain a listWit or listBibl, but not both</report>
-            </rule>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:listBibl[1]">
-              <report test="./tei:listWit">Source description must contain a listWit or listBibl, but not both</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
+        
         <!-- encodingDesc rules -->
-        <constraintSpec ident="encoding-desc-must-be-present" scheme="schematron">
-          <desc>Encoding description must be present</desc>
-          <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:teiHeader[1]">
-              <report test="not(./tei:encodingDesc)">Encoding description must be present</report>
-            </rule>
-          </constraint>
-        </constraintSpec>
         <constraintSpec ident="schema-ref-must-be-present" scheme="schematron">
           <desc>SchemaRef must be present</desc>
           <constraint>
