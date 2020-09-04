@@ -32,9 +32,9 @@
         
         
         
-        <elementSpec ident="p" module="core" mode="add">
+        <elementSpec ident="p" module="core" mode="change">
           <attList>
-            <attDef ident="rend" usage="opt" mode="add">
+            <attDef ident="rend" usage="opt" mode="change">
               <valList type="closed" mode="add">
                 <valItem ident="indented">
                   <gloss>indented</gloss>
@@ -46,111 +46,234 @@
         </elementSpec>
         
         
-        
-        <!-- Begin modifications to del element -->
-        
-        <elementSpec ident="del" module="core" mode="change">
+        <elementSpec ident="lb" module="core" mode="change">
           <attList>
-            <attDef ident="rend" usage="rec" mode="change">
-              <valList type="semi" mode="add">
-                <valItem ident="strikethrough">
-                  <gloss>strikethrough</gloss>
-                  <desc>A deletion indicated by a line through the center of the text</desc>
-                </valItem>
-                <valItem ident="expunctuation">
-                  <gloss>expunctuation</gloss>
-                  <desc>A deletion indicated by dots underneath the text</desc>
-                </valItem>
-                <valItem ident="blackout">
-                  <gloss>black out</gloss>
-                  <desc>A deletion indicated by blacking out the word or segment</desc>
-                </valItem>
-                <valItem ident="underline">
-                  <gloss>underline</gloss>
-                  <desc>A deletion indicated by underling the word or segment</desc>
-                </valItem>
-                <valItem ident="erasure">
-                  <gloss>erasure</gloss>
-                  <desc>Deletion by erasure</desc>
+            <attDef ident="type" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="nonumber">
+                  <gloss>no number</gloss>
+                  <desc>Unnumbered line break</desc>
                 </valItem>
               </valList>
             </attDef>
           </attList>
         </elementSpec>
         
-        <!-- end del element -->
         
-        <!-- begin add element -->
         
-        <elementSpec ident="add" module="core" mode="change">
+        <elementSpec ident="title" module="core" mode="change">
           <attList>
-            <attDef ident="place" usage="rec" mode="change">
-              <valList type="semi" mode="add">
-                <valItem ident="margin">
-                  <gloss>margin</gloss>
-                  <desc>A generic place locator for an addition appearing in some margin</desc>
+            <attDef ident="type" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="ms">
+                  <gloss>manuscript</gloss>
+                  <desc>Title of a manuscript</desc>
                 </valItem>
-                <valItem ident="margin-right">
-                  <gloss>margin-right</gloss>
-                  <desc>Indicates an addition in the margin to the right of the text in question</desc>
+                <valItem ident="ed">
+                  <gloss>edition</gloss>
+                  <desc>Title of a printed edition</desc>
                 </valItem>
-                <valItem ident="margin-left">
-                  <gloss>margin-left</gloss>
-                  <desc>Indicates an addition in the margin to the left of the text in question</desc>
-                </valItem>
-                <valItem ident="margin-above">
-                  <gloss>margin-above</gloss>
-                  <desc>Indicates an addition in the margin to the above of the text in question</desc>
-                </valItem>
-                <valItem ident="margin-below">
-                  <gloss>margin-below</gloss>
-                  <desc>Indicates an addition in the margin to the below of the text in question</desc>
-                </valItem>
-                <valItem ident="above-line">
-                  <gloss>above-line</gloss>
-                  <desc>Indicates an addition inserted above the line in question</desc>
-                </valItem>
-                <valItem ident="below-line">
-                  <gloss>below-line</gloss>
-                  <desc>Indicates an addition inserted below the line in question</desc>
-                </valItem>
-                <valItem ident="in-line">
-                  <gloss>in-line</gloss>
-                  <desc>Indicates an addition inserted in the line</desc>
+              </valList>
+            </attDef>
+            <attDef ident="rend" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="upshape">
+                  <gloss>upshape</gloss>
+                  <desc>
+                    Title rendered in upshape font, 
+                    not in italics
+                  </desc>
                 </valItem>
               </valList>
             </attDef>
           </attList>
         </elementSpec>
         
-        <!-- end add element -->
         
-        <elementSpec ident="note" module="core" mode="change">
+        
+        <elementSpec ident="hi" module="core" mode="change">
           <attList>
-            <attDef ident="type" mode="change" usage="rec">
-              <constraintSpec ident="note-place-noplace" scheme="schematron">
-                <desc>These constraints are used to require a place attribute when a when marginal attribute is used and to forbid a place attribute when an editorial note is used. The reasoning is that an editorial note is an intervention and a new creation, therefore there is no pre-existing place or location that it can be found. A marginal note is just the opposite, it has a physical place is a primary source witness, therefore that place needs to be recorded with a place attribute.</desc>
-                <constraint>
-                  <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="tei:note[@type='marginal-note']">
-                    <report test="not(./@place)">This is a marginal note. This means that it is a note that exist in the primary source. Therefore it has a physical location that needs to be recorded.</report>
-                  </rule>
-                </constraint>
-              </constraintSpec>
-              <valList type="semi" mode="change">
-                <valItem ident="marginal-note">
-                  <gloss>Marginal Note</gloss>
-                  <desc>A note present in the manuscript witness itself, but clear meant as annotation to the actual text. This note may either be in the same hand as the text or supplied by a latter reader.</desc>
+            <attDef ident="rend" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="sc">
+                  <gloss>smallcaps</gloss>
+                  <desc>Render in smallcaps</desc>
+                </valItem>
+                <valItem ident="bf">
+                  <gloss>boldface</gloss>
+                  <desc>Render in bold text</desc>
+                </valItem>
+                <valItem ident="superscript">
+                  <gloss>superscript</gloss>
+                  <desc>Render in superscript</desc>
+                </valItem>
+                <valItem ident="subscript">
+                  <gloss>subscript</gloss>
+                  <desc>Render in subscript</desc>
                 </valItem>
               </valList>
             </attDef>
           </attList>
         </elementSpec>
+        
+        
+        <elementSpec ident="foreign" module="core" mode="change">
+          <attList>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="lexeme">
+                  <gloss>lexeme</gloss>
+                  <desc>Treats the quote as a lexeme</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <elementSpec ident="mentioned" module="core" mode="change">
+          <attList>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="lexeme">
+                  <gloss>lexeme</gloss>
+                  <desc>Treats the quote as a lexeme</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <elementSpec ident="gloss" module="core" mode="change">
+          <attList>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="lexeme">
+                  <gloss>lexeme</gloss>
+                  <desc>Treats the quote as a lexeme</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <elementSpec ident="q" module="core" mode="change">
+          <attList>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="lexeme">
+                  <gloss>lexeme</gloss>
+                  <desc>Treats the quote as a lexeme</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="rend" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="indented">
+                  <gloss>indented</gloss>
+                  <desc>
+                    The quote is rendered as an indented paragraph
+                  </desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        
+        <elementSpec ident="quote" module="core" mode="change">
+          <attList>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="verse">
+                  <gloss>verse</gloss>
+                  <desc>The quote is a verse</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        
+        
+        
+        <elementSpec ident="ref" module="core" mode="change">
+          <attList>
+            <attDef ident="type" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="a">
+                  <gloss>citeauthor</gloss>
+                  <desc>\citeauthor: e.g. 'Ockham'</desc>
+                </valItem>
+                <valItem ident="p">
+                  <gloss>parencite</gloss>
+                  <desc>\parencite: e.g. '(Ockham 2020)'</desc>
+                </valItem>
+                <valItem ident="t">
+                  <gloss>citetitle</gloss>
+                  <desc>\citetitle: e.g. 'Quodlibeta Septem'</desc>
+                </valItem>
+                <valItem ident="y">
+                  <gloss>citeyear</gloss>
+                  <desc>\citeyear: e.g. '2020'</desc>
+                </valItem>
+                <valItem ident="py">
+                  <gloss>citeyear in parenthesis</gloss>
+                  <desc>:\citeyear in parenthesis e.g. '(2020)'</desc>
+                </valItem>
+                <valItem ident="abbr">
+                  <gloss>citeabbr</gloss>
+                  <desc>\citeabbr: e.g. 'Quodl'</desc>
+                </valItem>
+                <valItem ident="pabbr">
+                  <gloss>citeabbr in parenthesis</gloss>
+                  <desc>\citeabbr in parenthesis: e.g. '(Quodl)'</desc>
+                </valItem>
+                <valItem ident="abbrpc">
+                  <gloss>citeabbr (content)</gloss>
+                  <desc>\citeabbr (content): e.g. 'Quodl (q.23)'</desc>
+                </valItem>
+                <valItem ident="fulltext">
+                  <gloss>fulltext ref</gloss>
+                  <desc>Use text/rend without calling LaTeX's cite</desc>
+                </valItem>
+                <valItem ident="nc">
+                  <gloss>nocite</gloss>
+                  <desc>
+                    \nocite: adds to bibliography but does not cite 
+                    in text; in the text, only the ref content 
+                    is included
+                  </desc>
+                </valItem>
+                <valItem ident="pnc">
+                  <gloss>nocite in parenthesis</gloss>
+                  <desc>\nocite in parenthesis: adds to bibliography 
+                    but does not cite in text; in the text, 
+                    only the ref content is included, 
+                    and within parentheses
+                  </desc>
+                </valItem>
+                <valItem ident="url">
+                  <gloss>ulr</gloss>
+                  <desc>produces a \href citation</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
         
         
         <moduleRef key="tei"/>
         
+        
+        
+        
+        
+        
+        
         <!-- header module -->
         <moduleRef key="header"/>
+        
         <!-- header rules -->
         <!-- titleStmt rules -->
         <constraintSpec ident="missing-author-rule" scheme="schematron">
@@ -272,8 +395,29 @@
         
         <!-- optional modules -->
         
+        
+        
         <!-- linking module -->
         <moduleRef key="linking"/>
+        
+        <elementSpec ident="ab" module="core" mode="change">
+          <attList>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="leavevmode">
+                  <gloss>leavevmode</gloss>
+                  <desc>Inserts LaTeX \leavevmode</desc>
+                </valItem>
+                <valItem ident="nl">
+                  <gloss>newline</gloss>
+                  <desc>Inserts LaTeX \par</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        
         
         <!-- Name and Date Module -->
         <moduleRef key="namesdates"/>
@@ -283,6 +427,30 @@
         
         <!-- Primary Source Transcription Module -->
         <moduleRef key="transcr"/>
+        
+        
+        <elementSpec ident="supplied" module="core" mode="change">
+          <attList>
+            <attDef ident="rend" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="nobrackets">
+                  <gloss>nobrackets</gloss>
+                  <desc>Supplied with no brackets</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="ana" usage="opt" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="eq">
+                  <gloss>eq</gloss>
+                  <desc>Inserts $=$ before the content</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        
         
         <!-- Ms Description Module -->
         <!-- not sure what elements need here; but I will probably need a lot more elements for the official bibliography of the mansucriopt witnesses -->
