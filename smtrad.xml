@@ -256,6 +256,10 @@
                   <gloss>ulr</gloss>
                   <desc>produces a \href citation</desc>
                 </valItem>
+                <valItem ident="internal">
+                  <gloss>internal</gloss>
+                  <desc>Internal crossref</desc>
+                </valItem>
               </valList>
             </attDef>
           </attList>
