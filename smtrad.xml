@@ -412,9 +412,7 @@
         <!-- Name and Date Module -->
         <moduleRef key="namesdates"/>
         
-        <!-- Text Criticism Module -->
-        <moduleRef key="textcrit"/>
-        
+                
         <!-- Primary Source Transcription Module -->
         <moduleRef key="transcr"/>
         
@@ -440,15 +438,9 @@
           </attList>
         </elementSpec>
         
+                
+        <moduleRef key="figure"/>
         
-        
-        <!-- Ms Description Module -->
-        <!-- not sure what elements need here; but I will probably need a lot more elements for the official bibliography of the mansucriopt witnesses -->
-        <moduleRef key="msdescription"/>
-        
-        <!-- Character and Glyph Documentat Module -->
-        <!-- may not be necessary once <pc> element replaces glyps -->
-        <moduleRef key="gaiji"/>
         
         <!-- analysis module -->
         <moduleRef key="analysis"/>
