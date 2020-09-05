@@ -336,9 +336,9 @@
         
         <!-- END HEADER RULES -->
         
-      
-      
-      
+        
+        
+        
         
         
         <!-- text structure module -->
@@ -374,11 +374,11 @@
         <!--<constraintSpec ident="body-p-is-child-of-div" scheme="schematron">
           <desc>every body p must be an immediate child of a div</desc>
           <constraint>
-            <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]/tei:body[1]//tei:p">
-              <report test="not(./parent::tei:div[1])">every body p must be an immediate child of a div</report>
-            </rule>
+          <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/tei:TEI/tei:text[1]/tei:body[1]//tei:p">
+          <report test="not(./parent::tei:div[1])">every body p must be an immediate child of a div</report>
+          </rule>
           </constraint>
-        </constraintSpec>-->
+          </constraintSpec>-->
         
         
         
@@ -412,7 +412,7 @@
         <!-- Name and Date Module -->
         <moduleRef key="namesdates"/>
         
-                
+        
         <!-- Primary Source Transcription Module -->
         <moduleRef key="transcr"/>
         
@@ -438,9 +438,10 @@
           </attList>
         </elementSpec>
         
-                
+        
         <moduleRef key="figures"/>
         
+        <moduleRef key="msdescription"/>
         
         <!-- analysis module -->
         <moduleRef key="analysis"/>
