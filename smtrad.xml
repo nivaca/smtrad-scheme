@@ -423,6 +423,7 @@
         
         <elementSpec ident="supplied" module="core" mode="change">
           <attList>
+            <!-- @rend -->
             <attDef ident="rend" usage="opt" mode="change">
               <valList type="closed" mode="add">
                 <valItem ident="nobrackets">
@@ -431,11 +432,12 @@
                 </valItem>
               </valList>
             </attDef>
+            <!-- @ana -->
             <attDef ident="ana" usage="opt" mode="change">
               <valList type="closed" mode="add">
                 <valItem ident="p">
                   <gloss>p</gloss>
-                  <desc>Uses parenthesis instead of brackets</desc>
+                  <desc>Uses parentheses instead of brackets</desc>
                 </valItem>
                 <valItem ident="eq">
                   <gloss>eq</gloss>
@@ -443,7 +445,7 @@
                 </valItem>
                 <valItem ident="peq">
                   <gloss>peq</gloss>
-                  <desc>Inserts $=$ before the content and uses parenthesis
+                  <desc>Inserts $=$ before the content and uses parentheses
                   instead of brackets</desc>
                 </valItem>
               </valList>
