@@ -38,7 +38,11 @@
               <valList type="closed" mode="add">
                 <valItem ident="indented">
                   <gloss>indented</gloss>
-                  <desc>Indented paragraph</desc>
+                  <desc>Indents to the right the whole paragraph</desc>
+                </valItem>
+                <valItem ident="nofirstlineindent">
+                  <gloss>nofirstlineindent</gloss>
+                  <desc>Does not indent the first line of paragraph</desc>
                 </valItem>
               </valList>
             </attDef>
@@ -429,15 +433,23 @@
             </attDef>
             <attDef ident="ana" usage="opt" mode="change">
               <valList type="closed" mode="add">
+                <valItem ident="p">
+                  <gloss>p</gloss>
+                  <desc>Uses parenthesis instead of brackets</desc>
+                </valItem>
                 <valItem ident="eq">
                   <gloss>eq</gloss>
                   <desc>Inserts $=$ before the content</desc>
+                </valItem>
+                <valItem ident="peq">
+                  <gloss>peq</gloss>
+                  <desc>Inserts $=$ before the content and uses parenthesis
+                  instead of brackets</desc>
                 </valItem>
               </valList>
             </attDef>
           </attList>
         </elementSpec>
-        
         
         <moduleRef key="figures"/>
         
