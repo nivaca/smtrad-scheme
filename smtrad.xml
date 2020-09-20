@@ -457,6 +457,9 @@
         
         <moduleRef key="msdescription"/>
         
+        <!--for glossary entries-->
+        <moduleRef key="dictionaries"/>
+        
         <!-- analysis module -->
         <moduleRef key="analysis"/>
         
