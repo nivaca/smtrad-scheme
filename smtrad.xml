@@ -109,6 +109,10 @@
                   <gloss>Classical Greek</gloss>
                   <desc>Classical Greek</desc>
                 </valItem>
+                <valItem ident="hbo">
+                  <gloss>Ancient Hebrew</gloss>
+                  <desc>Ancient Hebrew</desc>
+                </valItem>
                 <valItem ident="ita">
                   <gloss>Italian</gloss>
                   <desc>Italian</desc>
@@ -168,6 +172,10 @@
                   <gloss>Classical Greek</gloss>
                   <desc>Classical Greek</desc>
                 </valItem>
+                <valItem ident="hbo">
+                  <gloss>Ancient Hebrew</gloss>
+                  <desc>Ancient Hebrew</desc>
+                </valItem>
                 <valItem ident="ita">
                   <gloss>Italian</gloss>
                   <desc>Italian</desc>
@@ -226,6 +234,10 @@
                 <valItem ident="grc">
                   <gloss>Classical Greek</gloss>
                   <desc>Classical Greek</desc>
+                </valItem>
+                <valItem ident="hbo">
+                  <gloss>Ancient Hebrew</gloss>
+                  <desc>Ancient Hebrew</desc>
                 </valItem>
                 <valItem ident="ita">
                   <gloss>Italian</gloss>
