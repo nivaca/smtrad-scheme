@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-09-28T23:29:15Z. .
+Schema generated from ODD source 2020-09-28T23:30:42Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -4046,7 +4046,6 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attribute.xmlid"/>
          <ref name="att.global.attribute.n"/>
-         <ref name="att.global.attribute.xmllang"/>
          <ref name="att.global.attribute.xmlbase"/>
          <ref name="att.global.attribute.xmlspace"/>
          <ref name="att.global.rendition.attribute.rend"/>
@@ -4065,6 +4064,38 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="att.global.responsibility.attribute.cert"/>
          <ref name="att.global.responsibility.attribute.resp"/>
          <ref name="att.global.source.attribute.source"/>
+         <optional>
+            <attribute name="xml:lang">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a>.</a:documentation>
+               <choice>
+                  <value>ang</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Anglo-Saxon) Anglo-Saxon</a:documentation>
+                  <value>cyn</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Welsh) Welsh</a:documentation>
+                  <value>deu</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(German) German</a:documentation>
+                  <value>enm</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Middle English) Middle English</a:documentation>
+                  <value>eng</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(English) English</a:documentation>
+                  <value>es</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Spanish) Spanish</a:documentation>
+                  <value>fra</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(French) French</a:documentation>
+                  <value>frm</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Middle French) Middle French</a:documentation>
+                  <value>fro</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Old French) Old French</a:documentation>
+                  <value>grc</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Classical Greek) Classical Greek</a:documentation>
+                  <value>ita</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Italian) Italian</a:documentation>
+                  <value>lat</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Latin) Latin</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <optional>
             <attribute name="ana">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(analysis) indicates one or more elements containing interpretations of the element on which the <code xmlns="http://www.w3.org/1999/xhtml">@ana</code> attribute appears.</a:documentation>
@@ -4294,7 +4325,6 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="macro.specialPara"/>
          <ref name="att.global.attribute.xmlid"/>
          <ref name="att.global.attribute.n"/>
-         <ref name="att.global.attribute.xmllang"/>
          <ref name="att.global.attribute.xmlbase"/>
          <ref name="att.global.attribute.xmlspace"/>
          <ref name="att.global.rendition.attribute.style"/>
@@ -4313,6 +4343,38 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="att.global.responsibility.attribute.resp"/>
          <ref name="att.global.source.attribute.source"/>
          <ref name="att.ascribed.directed.attributes"/>
+         <optional>
+            <attribute name="xml:lang">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language) indicates the language of the element content using a tag generated according to <a xmlns="http://www.w3.org/1999/xhtml"
+                     href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a>.</a:documentation>
+               <choice>
+                  <value>ang</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Anglo-Saxon) Anglo-Saxon</a:documentation>
+                  <value>cyn</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Welsh) Welsh</a:documentation>
+                  <value>deu</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(German) German</a:documentation>
+                  <value>enm</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Middle English) Middle English</a:documentation>
+                  <value>eng</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(English) English</a:documentation>
+                  <value>es</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Spanish) Spanish</a:documentation>
+                  <value>fra</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(French) French</a:documentation>
+                  <value>frm</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Middle French) Middle French</a:documentation>
+                  <value>fro</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Old French) Old French</a:documentation>
+                  <value>grc</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Classical Greek) Classical Greek</a:documentation>
+                  <value>ita</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Italian) Italian</a:documentation>
+                  <value>lat</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Latin) Latin</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <optional>
             <attribute name="rend">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(rendition) indicates how the element in question was rendered or presented in the source text.</a:documentation>
