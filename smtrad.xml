@@ -73,6 +73,14 @@
                   <gloss>Anglo-Saxon</gloss>
                   <desc>Anglo-Saxon</desc>
                 </valItem>
+                <valItem ident="cyn">
+                  <gloss>Welsh</gloss>
+                  <desc>Welsh</desc>
+                </valItem>
+                <valItem ident="deu">
+                  <gloss>German</gloss>
+                  <desc>German</desc>
+                </valItem>
                 <valItem ident="enm">
                   <gloss>Middle English</gloss>
                   <desc>Middle English</desc>
@@ -81,37 +89,33 @@
                   <gloss>English</gloss>
                   <desc>English</desc>
                 </valItem>
-                <valItem ident="lat">
-                  <gloss>Latin</gloss>
-                  <desc>Latin</desc>
-                </valItem>
                 <valItem ident="es">
                   <gloss>Spanish</gloss>
                   <desc>Spanish</desc>
-                </valItem>
-                <valItem ident="fro">
-                  <gloss>Old French</gloss>
-                  <desc>Old French</desc>
-                </valItem>
-                <valItem ident="frm">
-                  <gloss>Middle French</gloss>
-                  <desc>Middle French</desc>
                 </valItem>
                 <valItem ident="fra">
                   <gloss>French</gloss>
                   <desc>French</desc>
                 </valItem>
+                <valItem ident="frm">
+                  <gloss>Middle French</gloss>
+                  <desc>Middle French</desc>
+                </valItem>
+                <valItem ident="fro">
+                  <gloss>Old French</gloss>
+                  <desc>Old French</desc>
+                </valItem>
                 <valItem ident="grc">
                   <gloss>Classical Greek</gloss>
                   <desc>Classical Greek</desc>
                 </valItem>
-                <valItem ident="cyn">
-                  <gloss>Welsh</gloss>
-                  <desc>Welsh</desc>
+                <valItem ident="ita">
+                  <gloss>Italian</gloss>
+                  <desc>Italian</desc>
                 </valItem>
-                <valItem ident="deu">
-                  <gloss>German</gloss>
-                  <desc>German</desc>
+                <valItem ident="lat">
+                  <gloss>Latin</gloss>
+                  <desc>Latin</desc>
                 </valItem>
               </valList>
             </attDef>
