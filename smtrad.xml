@@ -456,6 +456,10 @@
                   <gloss>internal</gloss>
                   <desc>Internal crossref</desc>
                 </valItem>
+                <valItem ident="note">
+                  <gloss>note</gloss>
+                  <desc>Note to the text</desc>
+                </valItem>
               </valList>
             </attDef>
           </attList>
